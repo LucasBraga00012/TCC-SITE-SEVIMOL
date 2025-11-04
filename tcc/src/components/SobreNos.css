@@ -1,0 +1,424 @@
+/* =====================================================
+   SOBRE NÓS - BASEADO NO SITE OFICIAL SEVIMOL
+   https://sevimol.com.br/
+   ===================================================== */
+
+.sobre-nos {
+  padding: 100px 0;
+  background: var(--sevimol-bg-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-secondary), var(--sevimol-secondary-dark));
+  margin: 0 auto 24px auto;
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.sobre-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.sobre-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--sevimol-gray);
+}
+
+.sobre-text p {
+  margin-bottom: 24px;
+}
+
+.sobre-text .intro-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--sevimol-black);
+  line-height: 1.6;
+}
+
+.sobre-text strong {
+  color: var(--sevimol-primary);
+  font-weight: 700;
+}
+
+.sobre-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow-xl);
+  transition: transform 0.3s ease;
+}
+
+.sobre-image:hover {
+  transform: scale(1.02);
+}
+
+.sobre-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.sobre-image:hover img {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 24px;
+  box-shadow: var(--sevimol-shadow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--sevimol-primary-dark), #a0040d);
+  transform: translateY(-3px);
+  box-shadow: var(--sevimol-shadow-lg);
+}
+
+/* Grid de valores baseado no site oficial */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.valor-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--sevimol-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.valor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+}
+
+.valor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sevimol-shadow-xl);
+}
+
+.valor-icon {
+  margin-bottom: 24px;
+}
+
+.valor-icon svg {
+  width: 60px;
+  height: 60px;
+  color: var(--sevimol-secondary);
+}
+
+.valor-card h3 {
+  font-size: 1.5rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.valor-card p,
+.valor-card ul {
+  color: var(--sevimol-gray);
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.valor-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.valor-card li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.valor-card li::before {
+  content: '•';
+  color: var(--sevimol-secondary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Destaque final baseado no site oficial */
+.destaque-final {
+  text-align: center;
+  background: linear-gradient(135deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  color: white;
+  padding: 60px;
+  border-radius: 12px;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.destaque-final::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.destaque-final h3 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design baseado no site oficial */
+@media (max-width: 1024px) {
+  .sobre-nos {
+    padding: 80px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .sobre-content {
+    gap: 40px;
+  }
+  
+  .valores-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-nos {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .sobre-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .sobre-text {
+    font-size: 1rem;
+  }
+  
+  .sobre-text .intro-text {
+    font-size: 1.125rem;
+  }
+  
+  .valores-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .valor-card {
+    padding: 30px;
+  }
+  
+  .destaque-final {
+    padding: 40px;
+  }
+  
+  .destaque-final h3 {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-nos {
+    padding: 40px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .sobre-content {
+    gap: 30px;
+  }
+  
+  .sobre-image img {
+    height: 250px;
+  }
+  
+  .valor-card {
+    padding: 24px;
+  }
+  
+  .valor-card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .valor-icon svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .btn-primary {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+  
+  .destaque-final {
+    padding: 30px;
+  }
+  
+  .destaque-final h3 {
+    font-size: 1.25rem;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Animações de entrada */
+.sobre-text {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.sobre-image {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.valor-card:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.valor-card:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.valor-card:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.destaque-final {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Animações personalizadas */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

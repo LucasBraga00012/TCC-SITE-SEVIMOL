@@ -1,0 +1,618 @@
+/* =====================================================
+   FAÇA PARTE - BASEADO NO SITE OFICIAL SEVIMOL
+   https://sevimol.com.br/
+   ===================================================== */
+
+.faca-parte {
+  padding: 100px 0;
+  background: var(--sevimol-bg-gray);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  margin: 0 auto 24px auto;
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Grid de vagas baseado no site oficial */
+.vagas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.vaga-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.vaga-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sevimol-shadow-xl);
+}
+
+.vaga-header {
+  padding: 24px;
+  background: var(--sevimol-primary);
+  color: white;
+}
+
+.vaga-header h3 {
+  font-size: 1.375rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.vaga-local {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vaga-local svg {
+  width: 16px;
+  height: 16px;
+}
+
+.vaga-content {
+  padding: 24px;
+}
+
+.vaga-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sevimol-gray);
+  font-size: 0.875rem;
+}
+
+.info-item svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--sevimol-primary);
+}
+
+.vaga-descricao {
+  color: var(--sevimol-gray);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.vaga-requisitos h4 {
+  color: var(--sevimol-black);
+  font-size: 1rem;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vaga-requisitos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.vaga-requisitos li {
+  color: var(--sevimol-gray);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.875rem;
+}
+
+.vaga-requisitos li::before {
+  content: '•';
+  color: var(--sevimol-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.vaga-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-candidatar,
+.btn-detalhes {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn-candidatar {
+  background: var(--sevimol-primary);
+  color: white;
+}
+
+.btn-candidatar:hover {
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+.btn-detalhes {
+  background: transparent;
+  color: var(--sevimol-primary);
+  border: 2px solid var(--sevimol-primary);
+}
+
+.btn-detalhes:hover {
+  background: var(--sevimol-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+/* Formulário de contato baseado no site oficial */
+.formulario-section {
+  background: white;
+  padding: 80px;
+  border-radius: 12px;
+  box-shadow: var(--sevimol-shadow);
+  margin-bottom: 60px;
+}
+
+.formulario-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.formulario-text h3 {
+  color: var(--sevimol-black);
+  font-size: 2rem;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formulario-text p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--sevimol-gray);
+  font-size: 1rem;
+}
+
+.contato-item svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--sevimol-primary);
+}
+
+.formulario-form {
+  background: var(--sevimol-bg-gray);
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--sevimol-black);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--sevimol-primary);
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-enviar {
+  background: var(--sevimol-primary);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.btn-enviar:hover {
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+/* CTA final baseado no site oficial */
+.cta-final {
+  background: linear-gradient(135deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  color: white;
+  padding: 80px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 30s linear infinite;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  margin: 0 0 40px 0;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-whatsapp,
+.btn-email {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  color: var(--sevimol-primary);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  box-shadow: var(--sevimol-shadow);
+}
+
+.btn-whatsapp:hover,
+.btn-email:hover {
+  background: var(--sevimol-bg-gray);
+  transform: translateY(-3px);
+  box-shadow: var(--sevimol-shadow-lg);
+}
+
+.btn-whatsapp svg,
+.btn-email svg {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design baseado no site oficial */
+@media (max-width: 1024px) {
+  .faca-parte {
+    padding: 80px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .vagas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  
+  .formulario-section {
+    padding: 60px;
+  }
+  
+  .formulario-content {
+    gap: 40px;
+  }
+  
+  .cta-final {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faca-parte {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .vagas-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  
+  .vaga-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .vaga-actions {
+    flex-direction: column;
+  }
+  
+  .formulario-section {
+    padding: 40px;
+  }
+  
+  .formulario-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .formulario-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-final {
+    padding: 40px;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-whatsapp,
+  .btn-email {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faca-parte {
+    padding: 40px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .vaga-header {
+    padding: 20px;
+  }
+  
+  .vaga-content {
+    padding: 20px;
+  }
+  
+  .formulario-section {
+    padding: 30px;
+  }
+  
+  .formulario-form {
+    padding: 30px;
+  }
+  
+  .formulario-text p {
+    font-size: 1rem;
+  }
+  
+  .cta-final {
+    padding: 30px;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Animações de entrada */
+.vaga-card:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.vaga-card:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.vaga-card:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.formulario-section {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-final {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* Animações personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeitos especiais para cards */
+.vaga-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vaga-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effects */
+.info-item:hover {
+  color: var(--sevimol-black);
+}
+
+.info-item:hover svg {
+  transform: scale(1.1);
+}
+
+.contato-item:hover {
+  color: var(--sevimol-black);
+}
+
+.contato-item:hover svg {
+  transform: scale(1.1);
+}

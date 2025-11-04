@@ -1,0 +1,602 @@
+/* =====================================================
+   COMÉRCIO - BASEADO NO SITE OFICIAL SEVIMOL
+   https://sevimol.com.br/
+   ===================================================== */
+
+.comercio {
+  padding: 100px 0;
+  background: var(--sevimol-bg-gray);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  margin: 0 auto 24px auto;
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Grid de produtos baseado no site oficial */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.produto-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.produto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sevimol-shadow-xl);
+}
+
+.produto-imagem {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.produto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder span {
+  color: #999;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+.produto-card:hover .produto-imagem img {
+  transform: scale(1.1);
+}
+
+.produto-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(227, 6, 19, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.produto-card:hover .produto-overlay {
+  opacity: 1;
+}
+
+.btn-orcamento {
+  background: white;
+  color: var(--sevimol-primary);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn-orcamento:hover {
+  background: var(--sevimol-bg-gray);
+  transform: scale(1.05);
+}
+
+.produto-content {
+  padding: 32px;
+}
+
+.produto-content h3 {
+  color: var(--sevimol-black);
+  font-size: 1.5rem;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.produto-content p {
+  color: var(--sevimol-gray);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.produto-aplicacoes h4 {
+  color: var(--sevimol-black);
+  font-size: 1rem;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.produto-aplicacoes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.produto-aplicacoes li {
+  color: var(--sevimol-gray);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.95rem;
+}
+
+.produto-aplicacoes li::before {
+  content: '•';
+  color: var(--sevimol-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.produto-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-detalhes,
+.btn-contato {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn-detalhes {
+  background: var(--sevimol-primary);
+  color: white;
+}
+
+.btn-detalhes:hover {
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+.btn-contato {
+  background: transparent;
+  color: var(--sevimol-primary);
+  border: 2px solid var(--sevimol-primary);
+}
+
+.btn-contato:hover {
+  background: var(--sevimol-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+/* Destaque qualidade baseado no site oficial */
+.destaque-qualidade {
+  background: white;
+  padding: 80px;
+  border-radius: 12px;
+  margin-bottom: 60px;
+  box-shadow: var(--sevimol-shadow);
+}
+
+.qualidade-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.qualidade-text h3 {
+  color: var(--sevimol-black);
+  font-size: 2rem;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.qualidade-text p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.qualidade-beneficios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.beneficio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--sevimol-gray);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.beneficio svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--sevimol-primary);
+}
+
+.qualidade-imagem {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow-lg);
+}
+
+.qualidade-imagem img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* CTA Section baseado no site oficial */
+.cta-section {
+  background: linear-gradient(135deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  color: white;
+  padding: 80px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 25s linear infinite;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  margin: 0 0 40px 0;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-whatsapp,
+.btn-telefone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  color: var(--sevimol-primary);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  box-shadow: var(--sevimol-shadow);
+}
+
+.btn-whatsapp:hover,
+.btn-telefone:hover {
+  background: var(--sevimol-bg-gray);
+  transform: translateY(-3px);
+  box-shadow: var(--sevimol-shadow-lg);
+}
+
+.btn-whatsapp svg,
+.btn-telefone svg {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design baseado no site oficial */
+@media (max-width: 1024px) {
+  .comercio {
+    padding: 80px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+  
+  .destaque-qualidade {
+    padding: 60px;
+  }
+  
+  .qualidade-content {
+    gap: 40px;
+  }
+  
+  .cta-section {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comercio {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .produto-actions {
+    flex-direction: column;
+  }
+  
+  .destaque-qualidade {
+    padding: 40px;
+  }
+  
+  .qualidade-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .qualidade-beneficios {
+    grid-template-columns: 1fr;
+  }
+  
+  .qualidade-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-section {
+    padding: 40px;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-whatsapp,
+  .btn-telefone {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comercio {
+    padding: 40px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .produto-content {
+    padding: 24px;
+  }
+  
+  .produto-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .destaque-qualidade {
+    padding: 30px;
+  }
+  
+  .qualidade-text p {
+    font-size: 1rem;
+  }
+  
+  .qualidade-imagem img {
+    height: 200px;
+  }
+  
+  .cta-section {
+    padding: 30px;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Animações de entrada */
+.produto-card:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.produto-card:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.produto-card:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.produto-card:nth-child(4) {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.produto-card:nth-child(5) {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.produto-card:nth-child(6) {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.destaque-qualidade {
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.cta-section {
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Animações personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeitos especiais para cards */
+.produto-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.produto-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effects */
+.produto-aplicacoes li:hover {
+  color: var(--sevimol-black);
+}
+
+.beneficio:hover {
+  color: var(--sevimol-black);
+}
+
+.beneficio:hover svg {
+  transform: scale(1.1);
+}

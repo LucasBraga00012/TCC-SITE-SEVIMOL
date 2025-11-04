@@ -1,0 +1,496 @@
+/* =====================================================
+   UNIDADES - BASEADO NO SITE OFICIAL SEVIMOL
+   https://sevimol.com.br/
+   ===================================================== */
+
+.unidades {
+  padding: 100px 0;
+  background: var(--sevimol-bg-gray);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  margin: 0 auto 24px auto;
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Grid de unidades baseado no site oficial */
+.unidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.unidade-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--sevimol-primary);
+  position: relative;
+}
+
+.unidade-card.matriz {
+  border-left-color: var(--sevimol-primary);
+  box-shadow: 0 4px 20px rgba(227, 6, 19, 0.15);
+}
+
+.unidade-card.filial {
+  border-left-color: var(--sevimol-blue);
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+}
+
+.unidade-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sevimol-shadow-xl);
+}
+
+.unidade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--sevimol-bg-gray);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.unidade-tipo {
+  background: var(--sevimol-primary);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.unidade-card.filial .unidade-tipo {
+  background: var(--sevimol-blue);
+}
+
+.unidade-status {
+  color: #059669;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.unidade-status::before {
+  content: '●';
+  font-size: 12px;
+}
+
+.unidade-content {
+  padding: 24px;
+}
+
+.unidade-content h3 {
+  color: var(--sevimol-black);
+  margin: 0 0 20px 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.unidade-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--sevimol-gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+  color: var(--sevimol-primary);
+}
+
+.info-item span {
+  flex: 1;
+}
+
+.unidade-actions {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  background: var(--sevimol-bg-gray);
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-contato,
+.btn-ver-mais {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn-contato {
+  background: var(--sevimol-primary);
+  color: white;
+}
+
+.btn-contato:hover {
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+.btn-ver-mais {
+  background: transparent;
+  color: var(--sevimol-primary);
+  border: 2px solid var(--sevimol-primary);
+}
+
+.btn-ver-mais:hover {
+  background: var(--sevimol-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+/* Mapa section baseado no site oficial */
+.mapa-section {
+  text-align: center;
+  background: white;
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: var(--sevimol-shadow);
+  margin-top: 60px;
+}
+
+.mapa-section h3 {
+  color: var(--sevimol-black);
+  font-size: 1.875rem;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mapa-container {
+  background: var(--sevimol-bg-gray);
+  border-radius: 12px;
+  padding: 40px;
+  border: 2px dashed #d1d5db;
+}
+
+.mapa-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: var(--sevimol-gray);
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.mapa-placeholder:hover {
+  border-color: var(--sevimol-primary);
+  color: var(--sevimol-primary);
+  background: rgba(227, 6, 19, 0.05);
+}
+
+.mapa-placeholder svg {
+  margin-bottom: 16px;
+  width: 60px;
+  height: 60px;
+  color: var(--sevimol-primary);
+}
+
+.mapa-placeholder p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--sevimol-black);
+}
+
+.mapa-placeholder span {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  text-align: center;
+  max-width: 300px;
+}
+
+/* Responsive Design baseado no site oficial */
+@media (max-width: 1024px) {
+  .unidades {
+    padding: 80px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .unidades-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .unidades {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .unidades-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  
+  .unidade-actions {
+    flex-direction: column;
+  }
+  
+  .btn-contato,
+  .btn-ver-mais {
+    width: 100%;
+  }
+  
+  .mapa-section {
+    padding: 40px;
+  }
+  
+  .mapa-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .mapa-container {
+    padding: 30px;
+  }
+  
+  .mapa-placeholder {
+    height: 200px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unidades {
+    padding: 40px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .unidade-header {
+    padding: 16px 20px;
+  }
+  
+  .unidade-content {
+    padding: 20px;
+  }
+  
+  .unidade-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .info-item {
+    font-size: 0.9rem;
+  }
+  
+  .unidade-actions {
+    padding: 16px 20px;
+  }
+  
+  .mapa-section {
+    padding: 30px;
+  }
+  
+  .mapa-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  .mapa-container {
+    padding: 20px;
+  }
+  
+  .mapa-placeholder {
+    height: 150px;
+  }
+  
+  .mapa-placeholder p {
+    font-size: 1.125rem;
+  }
+  
+  .mapa-placeholder span {
+    font-size: 0.875rem;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Animações de entrada */
+.unidade-card:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.unidade-card:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.unidade-card:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.unidade-card:nth-child(4) {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.unidade-card:nth-child(5) {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.unidade-card:nth-child(6) {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.unidade-card:nth-child(7) {
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.mapa-section {
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+/* Animações personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeitos especiais para cards */
+.unidade-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.unidade-card.matriz::before {
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+}
+
+.unidade-card.filial::before {
+  background: linear-gradient(90deg, var(--sevimol-blue), var(--sevimol-dark-blue));
+}
+
+.unidade-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effects para info items */
+.info-item:hover {
+  color: var(--sevimol-black);
+}
+
+.info-item:hover svg {
+  transform: scale(1.1);
+}
+
+/* Loading states */
+.unidade-card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.unidade-card.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid var(--sevimol-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

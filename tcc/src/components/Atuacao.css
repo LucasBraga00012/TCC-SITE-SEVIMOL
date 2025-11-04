@@ -1,0 +1,468 @@
+/* =====================================================
+   ATUAÇÃO - BASEADO NO SITE OFICIAL SEVIMOL
+   https://sevimol.com.br/
+   ===================================================== */
+
+.atuacao {
+  padding: 100px 0;
+  background: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  margin: 0 auto 24px auto;
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--sevimol-gray);
+  font-size: 1.125rem;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Grid de segmentos baseado no site oficial */
+.segmentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.segmento-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.segmento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sevimol-shadow-xl);
+}
+
+.segmento-imagem {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.segmento-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.segmento-card:hover .segmento-imagem img {
+  transform: scale(1.1);
+}
+
+.segmento-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(227, 6, 19, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.segmento-card:hover .segmento-overlay {
+  opacity: 1;
+}
+
+.btn-saiba-mais {
+  background: white;
+  color: var(--sevimol-primary);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+.btn-saiba-mais:hover {
+  background: var(--sevimol-bg-gray);
+  transform: scale(1.05);
+}
+
+.segmento-content {
+  padding: 32px;
+}
+
+.segmento-content h3 {
+  color: var(--sevimol-black);
+  font-size: 1.5rem;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.segmento-content p {
+  color: var(--sevimol-gray);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.segmento-produtos h4 {
+  color: var(--sevimol-black);
+  font-size: 1rem;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.produtos-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.produto-tag {
+  background: var(--sevimol-primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-contatar {
+  background: var(--sevimol-primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.btn-contatar:hover {
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--sevimol-shadow);
+}
+
+/* Destaque experiência baseado no site oficial */
+.destaque-experiencia {
+  background: linear-gradient(135deg, var(--sevimol-black), var(--sevimol-dark-blue));
+  color: white;
+  padding: 80px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.destaque-experiencia::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(227, 6, 19, 0.1) 0%, transparent 70%);
+  animation: rotate 35s linear infinite;
+}
+
+.experiencia-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.experiencia-text h3 {
+  font-size: 2rem;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experiencia-text p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.experiencia-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--sevimol-primary);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.experiencia-imagem {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sevimol-shadow-xl);
+}
+
+.experiencia-imagem img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design baseado no site oficial */
+@media (max-width: 1024px) {
+  .atuacao {
+    padding: 80px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .segmentos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+  
+  .destaque-experiencia {
+    padding: 60px;
+  }
+  
+  .experiencia-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .atuacao {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .segmentos-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .destaque-experiencia {
+    padding: 40px;
+  }
+  
+  .experiencia-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .experiencia-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .experiencia-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .atuacao {
+    padding: 40px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .segmento-content {
+    padding: 24px;
+  }
+  
+  .segmento-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .destaque-experiencia {
+    padding: 30px;
+  }
+  
+  .experiencia-text p {
+    font-size: 1rem;
+  }
+  
+  .experiencia-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    padding: 20px;
+  }
+  
+  .stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .experiencia-imagem img {
+    height: 200px;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Animações de entrada */
+.segmento-card:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.segmento-card:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.segmento-card:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.segmento-card:nth-child(4) {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.destaque-experiencia {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* Animações personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeitos especiais para cards */
+.segmento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.segmento-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover effects */
+.produto-tag:hover {
+  background: var(--sevimol-primary-dark);
+  transform: scale(1.05);
+}

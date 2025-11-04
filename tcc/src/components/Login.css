@@ -172,7 +172,7 @@
 /* Botão de login */
 .login-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: rgb(48, 13, 222);
   border: none;
   padding: 15px;
   border-radius: 10px;
