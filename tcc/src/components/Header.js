@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import logoSevimol from '../img/logoWide.png';
 
 const Header = ({ onNavigate, activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,11 +36,7 @@ const Header = ({ onNavigate, activeSection }) => {
         <div className="header-content">
           {/* Logo */}
           <div className="logo" onClick={() => handleMenuClick('inicio')}>
-            <img src="/logo-sevimol.png" alt="SEVIMOL" className="logo-img" />
-            <div className="logo-text">
-              <h1>SEVIMOL</h1>
-              <span>Ferro e Aço</span>
-            </div>
+            <img src={logoSevimol} alt="SEVIMOL" className="logo-img" />
           </div>
 
           {/* Desktop Menu */}

@@ -18,17 +18,22 @@
   top: 0;
   left: 0;
   right: 0;
-  /* topo azul sólido como no site */
-  background: var(--sevimol-primary);
-  border-bottom: 1px solid rgba(10, 90, 140, 0.35); /* azul escuro */
+  /* Branca translúcida com blur - estilo AçoFort */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(11, 94, 169, 0.1);
   z-index: 1000;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .header.scrolled {
+  /* Azul sólido quando rolar */
   background: var(--sevimol-primary);
-  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.18);
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(10, 90, 140, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 .container {
@@ -50,38 +55,19 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 .logo:hover { transform: scale(1.05); }
 
 .logo-img {
-  height: 50px;
+  height: 60px;
   width: auto;
   object-fit: contain;
+  transition: all 0.3s ease;
 }
 
-.logo-text { display: flex; flex-direction: column; }
-
-.logo-text h1 {
-  color: #FFFFFF; /* logo branco sobre o azul */
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin: 0;
-  letter-spacing: 1px;
-  line-height: 1;
-}
-
-.logo-text span {
-  color: var(--sevimol-secondary); /* amarelo */
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 2px;
-}
-
-/* Navegação desktop (links amarelos) */
+/* Navegação desktop (adaptável) */
 .desktop-nav { display: flex; align-items: center; }
 
 .nav-list {
@@ -97,23 +83,25 @@
 .nav-link {
   background: none;
   border: none;
-  color: var(--sevimol-secondary);     /* amarelo */
+  /* Azul quando header é branco */
+  color: var(--sevimol-primary);
   font-size: 0.875rem;
   font-weight: 800;
   cursor: pointer;
   padding: 12px 20px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 0.6px;
   text-decoration: none;
   display: block;
 }
 
+/* Quando header é branco (não scrolled) */
 .nav-link:hover,
 .nav-link.active {
-  color: #FFFFFF; /* branco no hover/ativo */
-  background: rgba(255, 212, 40, 0.10); /* amarelo suave */
+  color: var(--sevimol-primary-dark);
+  background: rgba(11, 94, 169, 0.08);
 }
 
 .nav-link::after {
@@ -123,12 +111,27 @@
   left: 50%;
   width: 0;
   height: 3px;
-  background: var(--sevimol-secondary); /* sublinhado amarelo */
-  transition: all 0.3s ease;
+  background: var(--sevimol-secondary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
 }
 .nav-link:hover::after,
 .nav-link.active::after { width: 80%; }
+
+/* Quando header está scrolled (azul) */
+.header.scrolled .nav-link {
+  color: var(--sevimol-secondary);
+}
+
+.header.scrolled .nav-link:hover,
+.header.scrolled .nav-link.active {
+  color: #FFFFFF;
+  background: rgba(255, 212, 40, 0.12);
+}
+
+.header.scrolled .nav-link::after {
+  background: var(--sevimol-secondary);
+}
 
 /* Botão do menu mobile (hambúrguer) */
 .mobile-menu-btn {
@@ -140,38 +143,54 @@
   padding: 8px;
   gap: 4px;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu-btn:hover {
-  background: rgba(255, 212, 40, 0.15); /* amarelo */
+  background: rgba(11, 94, 169, 0.08);
 }
 .mobile-menu-btn span {
   width: 24px;
   height: 2px;
-  background: #FFFFFF; /* barras brancas no topo azul */
-  transition: all 0.3s ease;
+  /* Azul quando header é branco */
+  background: var(--sevimol-primary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 1px;
 }
+
+/* Branco quando header está scrolled (azul) */
+.header.scrolled .mobile-menu-btn span {
+  background: #FFFFFF;
+}
+
+.header.scrolled .mobile-menu-btn:hover {
+  background: rgba(255, 212, 40, 0.15);
+}
+
 .mobile-menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
 .mobile-menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
-/* Menu mobile (painel branco com acentos azul/amarelo) */
+/* Menu mobile (painel branco sempre) */
 .mobile-menu {
   display: none;
   background: #FFFFFF;
-  border-top: 1px solid rgba(10, 90, 140, 0.18); /* azul escuro */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(11, 94, 169, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.mobile-menu.open { max-height: 400px; }
+.mobile-menu.open { 
+  max-height: 500px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
 
 .mobile-nav-list { list-style: none; margin: 0; padding: 20px 0; }
 
@@ -220,8 +239,7 @@
 /* Responsivo */
 @media (max-width: 1024px) {
   .header-content { height: 70px; }
-  .logo-text h1 { font-size: 1.5rem; }
-  .logo-text span { font-size: 0.8rem; }
+  .logo-img { height: 50px; }
   .nav-link { padding: 10px 16px; font-size: 0.8rem; }
 }
 
@@ -230,18 +248,14 @@
   .desktop-nav { display: none; }
   .mobile-menu-btn { display: flex; }
   .mobile-menu { display: block; }
-  .logo-text h1 { font-size: 1.375rem; }
-  .logo-text span { font-size: 0.75rem; }
-  .logo-img { height: 40px; }
+  .logo-img { height: 45px; }
   .header-content { height: 65px; }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 12px; }
   .logo { gap: 8px; }
-  .logo-text h1 { font-size: 1.25rem; }
-  .logo-text span { font-size: 0.7rem; }
-  .logo-img { height: 35px; }
+  .logo-img { height: 40px; }
   .header-content { height: 60px; }
   .mobile-nav-link { padding: 14px 16px; font-size: 0.9rem; }
 }

@@ -83,17 +83,6 @@ function App() {
   // Renderizar Site Público
   return (
     <div className="App">
-      {/* Botão de acesso ao admin (apenas visível para desenvolvimento) */}
-      <div className="admin-access">
-        <button 
-          onClick={() => setCurrentView('login')}
-          className="admin-btn"
-          title="Acessar Painel Administrativo"
-        >
-          🔧 Admin
-        </button>
-      </div>
-
       <Header onNavigate={scrollToSection} activeSection={activeSection} />
       
       <main>

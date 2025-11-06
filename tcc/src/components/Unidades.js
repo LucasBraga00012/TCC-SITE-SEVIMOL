@@ -73,14 +73,10 @@ const Unidades = () => {
         <div className="unidades-grid">
           {unidades.map((unidade, index) => (
             <div key={index} className={`unidade-card ${unidade.tipo}`}>
-              <div className="unidade-header">
-                <div className="unidade-tipo">
-                  {unidade.tipo === 'matriz' ? 'Matriz' : 'Filial'}
-                </div>
-                <div className="unidade-status">Ativo</div>
-              </div>
-              
               <div className="unidade-content">
+                <div className="unidade-badge">
+                  {unidade.tipo === 'matriz' ? 'MATRIZ' : 'FILIAL'}
+                </div>
                 <h3>{unidade.nome}</h3>
                 <div className="unidade-info">
                   <div className="info-item">
@@ -113,26 +109,12 @@ const Unidades = () => {
               </div>
 
               <div className="unidade-actions">
-                <button className="btn-contato">Entrar em Contato</button>
-                <button className="btn-ver-mais">Ver Mais</button>
+                <a href="tel:3438262000" className="btn-contato" style={{textDecoration: 'none'}}>Entrar em Contato</a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Mapa Interativo */}
-        <div className="mapa-section">
-          <h3>Localização de Nossas Unidades</h3>
-          <div className="mapa-container">
-            <div className="mapa-placeholder">
-              <svg width="100" height="100" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="#e74c3c"/>
-              </svg>
-              <p>Mapa Interativo</p>
-              <span>Clique nos marcadores para ver informações das unidades</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
