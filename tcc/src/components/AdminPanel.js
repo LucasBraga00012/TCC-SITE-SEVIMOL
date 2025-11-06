@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AdminPanel.css';
 import { supabase } from '../lib/supabase';
+import logoSevimol from '../img/logoWide.png';
 
 const AdminPanel = ({ adminData, onLogout }) => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -1091,7 +1092,7 @@ const AdminPanel = ({ adminData, onLogout }) => {
       <header className="admin-header">
         <div className="header-content">
           <div className="logo">
-            <img src="/logo-sevimol.png" alt="SEVIMOL" />
+            <img src={logoSevimol} alt="SEVIMOL" />
             <div className="logo-text">
               <h1>SEVIMOL</h1>
               <span>Painel Administrativo</span>

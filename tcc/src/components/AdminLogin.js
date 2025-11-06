@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './AdminLogin.css';
 import { supabase } from '../lib/supabase';
+import logoSevimol from '../img/logoWide.png';
 
 const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
   const [formData, setFormData] = useState({
@@ -269,7 +270,7 @@ const AdminLogin = ({ onLoginSuccess, onBackToSite }) => {
         <div className="admin-login-card">
           <div className="login-header">
             <div className="logo">
-              <img src="/logo-sevimol.png" alt="SEVIMOL" />
+              <img src={logoSevimol} alt="SEVIMOL" />
               <div className="logo-text">
                 <h1>SEVIMOL</h1>
                 <span>Painel Administrativo</span>

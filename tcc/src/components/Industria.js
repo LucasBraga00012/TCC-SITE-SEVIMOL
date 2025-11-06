@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Industria.css';
 import { supabase } from '../lib/supabase';
+import ModalDetalhes from './ModalDetalhes';
+import tecnologiaImage from '../img/tecnologia_ponta.jpg';
 
 const Industria = () => {
   const [servicos, setServicos] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedServico, setSelectedServico] = useState(null);
 
   useEffect(() => {
     loadServicos();
@@ -39,6 +43,11 @@ const Industria = () => {
     } catch (error) {
       console.error('Erro ao carregar serviços:', error);
     }
+  };
+
+  const handleVerMais = (servico) => {
+    setSelectedServico(servico);
+    setModalOpen(true);
   };
 
   return (
@@ -77,7 +86,7 @@ const Industria = () => {
                     </div>
                   )}
                   <div className="servico-overlay">
-                    <button className="btn-ver-mais">Ver mais</button>
+                    <button className="btn-ver-mais" onClick={() => handleVerMais(servico)}>Ver mais</button>
                   </div>
                 </div>
               
@@ -85,7 +94,7 @@ const Industria = () => {
                 <h3>{servico.nome}</h3>
                 <p>{servico.descricao}</p>
                 
-                <button className="btn-solicitar">Solicitar Orçamento</button>
+                <a href="https://wa.me/553438262012" target="_blank" rel="noopener noreferrer" className="btn-solicitar" style={{textDecoration: 'none'}}>Solicitar Orçamento</a>
               </div>
             </div>
             );
@@ -129,11 +138,17 @@ const Industria = () => {
               </div>
             </div>
             <div className="destaque-imagem">
-              <img src="/tecnologia-industria.jpg" alt="Tecnologia Industrial" />
+              <img src={tecnologiaImage} alt="Tecnologia Industrial" />
             </div>
           </div>
         </div>
       </div>
+      
+      <ModalDetalhes 
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        item={selectedServico}
+      />
     </section>
   );
 };

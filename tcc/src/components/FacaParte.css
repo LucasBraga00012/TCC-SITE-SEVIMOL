@@ -56,23 +56,59 @@
 
 .vaga-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--sevimol-shadow);
-  transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(11, 94, 169, 0.08);
   position: relative;
 }
 
+.vaga-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-secondary), var(--sevimol-primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vaga-card:hover::after {
+  transform: scaleX(1);
+}
+
 .vaga-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sevimol-shadow-xl);
+  transform: translateY(-12px) scale(1.01);
+  box-shadow: 0 20px 48px rgba(11, 94, 169, 0.18);
+  border-color: rgba(11, 94, 169, 0.2);
 }
 
 .vaga-header {
   padding: 24px;
-  background: var(--sevimol-primary);
+  background: linear-gradient(135deg, var(--sevimol-primary), var(--sevimol-primary-dark));
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.vaga-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .vaga-header h3 {
@@ -169,39 +205,74 @@
 .btn-candidatar,
 .btn-detalhes {
   flex: 1;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 6px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   font-size: 0.875rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-candidatar {
   background: var(--sevimol-primary);
   color: white;
+  box-shadow: 0 4px 12px rgba(11, 94, 169, 0.25);
+}
+
+.btn-candidatar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-candidatar:hover::before {
+  left: 100%;
 }
 
 .btn-candidatar:hover {
   background: var(--sevimol-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--sevimol-shadow);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(11, 94, 169, 0.35);
 }
 
 .btn-detalhes {
-  background: transparent;
+  background: white;
   color: var(--sevimol-primary);
   border: 2px solid var(--sevimol-primary);
+  box-shadow: 0 2px 8px rgba(11, 94, 169, 0.1);
+}
+
+.btn-detalhes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--sevimol-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-detalhes:hover::before {
+  width: 100%;
 }
 
 .btn-detalhes:hover {
-  background: var(--sevimol-primary);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: var(--sevimol-shadow);
+  border-color: var(--sevimol-primary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(11, 94, 169, 0.25);
 }
 
 /* Formulário de contato baseado no site oficial */

@@ -3,18 +3,19 @@
    https://sevimol.com.br/
    ===================================================== */
 
-/* Variáveis CSS - Novo esquema de cores: Azul, Branco e Amarelo */
+/* Variáveis CSS - Baseado no site oficial sevimol.com.br */
 :root {
-  /* Cores principais */
-  --sevimol-primary: #2563eb;        /* Azul principal */
-  --sevimol-primary-dark: #1d4ed8;   /* Azul escuro */
-  --sevimol-primary-light: #3b82f6;  /* Azul claro */
-  --sevimol-secondary: #fbbf24;      /* Amarelo detalhes */
-  --sevimol-secondary-dark: #f59e0b; /* Amarelo escuro */
-  --sevimol-secondary-light: #fcd34d; /* Amarelo claro */
+  /* Cores principais - Site oficial SEVIMOL */
+  --sevimol-primary: #0B5EA9;        /* Azul principal */
+  --sevimol-primary-dark: #0A5A8C;   /* Azul escuro */
+  --sevimol-primary-light: #1E7BC9;  /* Azul claro */
+  --sevimol-secondary: #FFD428;      /* Amarelo detalhes */
+  --sevimol-secondary-dark: #F5C300; /* Amarelo escuro */
+  --sevimol-secondary-light: #FFE066; /* Amarelo claro */
   
   /* Cores neutras */
   --sevimol-white: #ffffff;
+  --sevimol-black: #0A2A43;          /* Ink/Preto suave */
   --sevimol-gray-50: #f8fafc;
   --sevimol-gray-100: #f1f5f9;
   --sevimol-gray-200: #e2e8f0;
@@ -25,22 +26,23 @@
   --sevimol-gray-700: #334155;
   --sevimol-gray-800: #1e293b;
   --sevimol-gray-900: #0f172a;
+  --sevimol-gray: #64748b;
   
   /* Cores de fundo */
   --sevimol-bg-light: #ffffff;
   --sevimol-bg-gray: #f8fafc;
   --sevimol-bg-blue: #eff6ff;
-  --sevimol-bg-dark: #1e293b;
+  --sevimol-bg-dark: #0A2A43;
   
   /* Tipografia */
   --sevimol-font-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   --sevimol-font-secondary: 'Roboto', sans-serif;
   
-  /* Sombras */
-  --sevimol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --sevimol-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --sevimol-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --sevimol-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* Sombras sutis */
+  --sevimol-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --sevimol-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  --sevimol-shadow-lg: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+  --sevimol-shadow-xl: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
 }
 
 /* Reset e base */
@@ -92,77 +94,147 @@ p {
   color: var(--sevimol-gray-600);
 }
 
-/* Botões com novo esquema de cores: Azul, Branco e Amarelo */
+/* Botões - Estilo moderno inspirado em landing pages profissionais */
 .btn-primary {
-  background: linear-gradient(135deg, var(--sevimol-primary), var(--sevimol-primary-dark));
+  background: var(--sevimol-primary);
   color: var(--sevimol-white);
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: 14px 32px;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  box-shadow: var(--sevimol-shadow);
+  box-shadow: 0 4px 14px rgba(11, 94, 169, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--sevimol-primary-dark), #1e40af);
-  transform: translateY(-2px);
-  box-shadow: var(--sevimol-shadow-lg);
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(11, 94, 169, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(1);
+  transition: all 0.1s;
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--sevimol-primary);
   border: 2px solid var(--sevimol-primary);
-  padding: 10px 22px;
-  border-radius: 6px;
+  padding: 12px 30px;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--sevimol-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-secondary:hover::before {
+  width: 100%;
 }
 
 .btn-secondary:hover {
-  background: var(--sevimol-primary);
   color: var(--sevimol-white);
-  transform: translateY(-2px);
-  box-shadow: var(--sevimol-shadow-lg);
+  border-color: var(--sevimol-primary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(11, 94, 169, 0.25);
+}
+
+.btn-secondary:active {
+  transform: translateY(-1px) scale(1);
+  transition: all 0.1s;
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--sevimol-secondary), var(--sevimol-secondary-dark));
-  color: var(--sevimol-gray-900);
+  background: var(--sevimol-secondary);
+  color: var(--sevimol-black);
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: 14px 32px;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  box-shadow: var(--sevimol-shadow);
+  box-shadow: 0 4px 14px rgba(255, 212, 40, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-accent::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-accent:hover::after {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-accent:hover {
-  background: linear-gradient(135deg, var(--sevimol-secondary-dark), #d97706);
-  transform: translateY(-2px);
-  box-shadow: var(--sevimol-shadow-lg);
+  background: var(--sevimol-secondary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 212, 40, 0.4);
+}
+
+.btn-accent:active {
+  transform: translateY(-1px) scale(1);
+  transition: all 0.1s;
 }
 
 .btn-outline {
@@ -203,7 +275,13 @@ p {
 
 /* Seções baseadas no site oficial */
 section {
-  padding: 80px 0;
+  margin: 0;
+}
+
+/* Remover espaçamento superior da seção Sobre Nós */
+section#sobre-nos {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .section-header {
@@ -229,27 +307,47 @@ section {
 }
 
 /* Divider baseado no site oficial */
-.divider {
+.section-divider {
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--sevimol-red), var(--sevimol-dark-red));
+  background: var(--sevimol-secondary);
   margin: 20px auto;
   border-radius: 2px;
 }
 
-/* Cards baseados no site oficial */
+/* Cards baseados no site oficial com melhorias visuais */
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 32px;
-  box-shadow: var(--sevimol-shadow);
-  transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(11, 94, 169, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sevimol-primary), var(--sevimol-secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sevimol-shadow-xl);
+  transform: translateY(-12px);
+  box-shadow: 0 16px 40px rgba(11, 94, 169, 0.15);
+  border-color: rgba(11, 94, 169, 0.2);
 }
 
 .card-header {
@@ -265,7 +363,7 @@ section {
 
 .card-subtitle {
   font-size: 0.875rem;
-  color: var(--sevimol-red);
+  color: var(--sevimol-primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -320,8 +418,8 @@ section {
 .form-textarea:focus,
 .form-select:focus {
   outline: none;
-  border-color: var(--sevimol-red);
-  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
+  border-color: var(--sevimol-primary);
+  box-shadow: 0 0 0 3px rgba(11, 94, 169, 0.1);
 }
 
 /* Badges baseados no site oficial */
@@ -336,43 +434,16 @@ section {
 }
 
 .badge-primary {
-  background: var(--sevimol-red);
+  background: var(--sevimol-primary);
   color: white;
 }
 
 .badge-secondary {
-  background: var(--sevimol-light-gray);
+  background: var(--sevimol-gray-100);
   color: var(--sevimol-gray-600);
 }
 
 /* Admin Access Button - Estilo SEVIMOL */
-.admin-access {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-}
-
-.admin-btn {
-  background: linear-gradient(135deg, #e30613, #c0050f);
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: var(--sevimol-shadow);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.admin-btn:hover {
-  background: linear-gradient(135deg, #c0050f, #a0040d);
-  transform: translateY(-2px);
-  box-shadow: var(--sevimol-shadow-lg);
-}
 
 /* Animações baseadas no site oficial */
 @keyframes fadeInUp {
@@ -439,7 +510,7 @@ section {
   width: 40px;
   height: 40px;
   border: 4px solid #f3f4f6;
-  border-top: 4px solid var(--sevimol-red);
+  border-top: 4px solid var(--sevimol-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -460,16 +531,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--sevimol-light-gray);
+  background: var(--sevimol-gray-100);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--sevimol-red);
+  background: var(--sevimol-primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--sevimol-dark-red);
+  background: var(--sevimol-primary-dark);
 }
 
 /* Responsive Design baseado no site oficial */
@@ -550,16 +621,6 @@ html {
   .card {
     padding: 20px;
   }
-  
-  .admin-access {
-    top: 10px;
-    right: 10px;
-  }
-  
-  .admin-btn {
-    padding: 8px 12px;
-    font-size: 0.75rem;
-  }
 }
 
 /* Utility classes */
@@ -593,15 +654,15 @@ html {
 .grid-display { display: grid; }
 
 /* Cores de texto */
-.text-red { color: var(--sevimol-red); }
-.text-blue { color: var(--sevimol-blue); }
+.text-primary { color: var(--sevimol-primary); }
+.text-secondary { color: var(--sevimol-secondary); }
 .text-gray { color: var(--sevimol-gray); }
 .text-black { color: var(--sevimol-black); }
 .text-white { color: white; }
 
 /* Cores de fundo */
-.bg-red { background-color: var(--sevimol-red); }
-.bg-blue { background-color: var(--sevimol-blue); }
+.bg-primary { background-color: var(--sevimol-primary); }
+.bg-secondary { background-color: var(--sevimol-secondary); }
 .bg-gray { background-color: var(--sevimol-gray); }
-.bg-light { background-color: var(--sevimol-light-gray); }
+.bg-light { background-color: var(--sevimol-bg-light); }
 .bg-white { background-color: white; }

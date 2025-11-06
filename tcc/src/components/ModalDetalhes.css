@@ -1,0 +1,339 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 42, 67, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(11, 94, 169, 0.1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close:hover {
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close svg {
+  color: var(--sevimol-primary);
+}
+
+/* Modal Image */
+.modal-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 32px;
+}
+
+.modal-body h2 {
+  font-size: 2rem;
+  color: var(--sevimol-black);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.modal-categoria {
+  display: inline-block;
+  background: var(--sevimol-secondary);
+  color: var(--sevimol-black);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.modal-descricao {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--sevimol-gray-600);
+  margin: 20px 0;
+}
+
+/* Modal Sections */
+.modal-detalhes,
+.modal-caracteristicas,
+.modal-aplicacoes {
+  margin: 32px 0;
+}
+
+.modal-detalhes h3,
+.modal-caracteristicas h3,
+.modal-aplicacoes h3 {
+  font-size: 1.25rem;
+  color: var(--sevimol-primary);
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-detalhes p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--sevimol-gray-600);
+}
+
+.modal-caracteristicas ul,
+.modal-aplicacoes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-caracteristicas li,
+.modal-aplicacoes li {
+  padding: 10px 0 10px 32px;
+  color: var(--sevimol-gray-700);
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--sevimol-gray-100);
+}
+
+.modal-caracteristicas li:last-child,
+.modal-aplicacoes li:last-child {
+  border-bottom: none;
+}
+
+.modal-caracteristicas li::before,
+.modal-aplicacoes li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--sevimol-primary);
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 2px solid var(--sevimol-gray-100);
+}
+
+.btn-modal-primary,
+.btn-modal-secondary {
+  flex: 1;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-modal-primary {
+  background: var(--sevimol-primary);
+  color: white;
+  box-shadow: 0 4px 16px rgba(11, 94, 169, 0.3);
+}
+
+.btn-modal-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-modal-primary:hover::before {
+  left: 100%;
+}
+
+.btn-modal-primary:hover {
+  background: var(--sevimol-primary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(11, 94, 169, 0.4);
+}
+
+.btn-modal-secondary {
+  background: white;
+  color: var(--sevimol-primary);
+  border: 2px solid var(--sevimol-primary);
+  box-shadow: 0 2px 8px rgba(11, 94, 169, 0.15);
+}
+
+.btn-modal-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--sevimol-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-modal-secondary:hover::before {
+  width: 100%;
+}
+
+.btn-modal-secondary:hover {
+  color: white;
+  border-color: var(--sevimol-primary-dark);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(11, 94, 169, 0.3);
+}
+
+/* Scrollbar personalizada para modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--sevimol-gray-100);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--sevimol-primary);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--sevimol-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    max-height: 95vh;
+  }
+  
+  .modal-image {
+    height: 200px;
+  }
+  
+  .modal-body {
+    padding: 24px;
+  }
+  
+  .modal-body h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-descricao {
+    font-size: 1rem;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .btn-modal-primary,
+  .btn-modal-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-body h2 {
+    font-size: 1.25rem;
+  }
+  
+  .modal-close {
+    width: 36px;
+    height: 36px;
+  }
+}
+
